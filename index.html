@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Test - Desktop First Design</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS for desktop-first design -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Header Section -->
+        <header class="row bg-primary text-white py-4 mb-4">
+            <div class="col-12">
+                <h1 class="display-4 text-center">Company Dashboard</h1>
+                <p class="lead text-center">Enterprise Management System</p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="row">
+                        <!-- Main Content -->
+            <main class="col-md-9 col-lg-12">
+                <!-- Dashboard Overview Cards -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Total Users</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">2,847</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-people fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Revenue</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$45,678</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-currency-dollar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Tasks</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">156</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-list-task fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Pending</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-clock fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Table Section -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Employee Directory</h6>
+                        <div class="dropdown no-arrow">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bi bi-three-dots-vertical fa-sm fa-fw text-gray-400"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                aria-labelledby="dropdownMenuLink">
+                                <div class="dropdown-header">Actions:</div>
+                                <a class="dropdown-item" href="#">Export Data</a>
+                                <a class="dropdown-item" href="#">Print Report</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Refresh</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="employeeTable" width="100%" cellspacing="0">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Department</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Hire Date</th>
+                                        <th>Salary</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>001</td>
+                                        <td>John Smith</td>
+                                        <td>Senior Developer</td>
+                                        <td>Engineering</td>
+                                        <td>john.smith@company.com</td>
+                                        <td>+1 (555) 123-4567</td>
+                                        <td>2020-03-15</td>
+                                        <td>$85,000</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>002</td>
+                                        <td>Sarah Johnson</td>
+                                        <td>Product Manager</td>
+                                        <td>Product</td>
+                                        <td>sarah.johnson@company.com</td>
+                                        <td>+1 (555) 234-5678</td>
+                                        <td>2019-07-22</td>
+                                        <td>$95,000</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>003</td>
+                                        <td>Michael Chen</td>
+                                        <td>UX Designer</td>
+                                        <td>Design</td>
+                                        <td>michael.chen@company.com</td>
+                                        <td>+1 (555) 345-6789</td>
+                                        <td>2021-01-10</td>
+                                        <td>$75,000</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>004</td>
+                                        <td>Emily Davis</td>
+                                        <td>Marketing Specialist</td>
+                                        <td>Marketing</td>
+                                        <td>emily.davis@company.com</td>
+                                        <td>+1 (555) 456-7890</td>
+                                        <td>2020-11-05</td>
+                                        <td>$65,000</td>
+                                        <td><span class="badge bg-warning">On Leave</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>005</td>
+                                        <td>David Wilson</td>
+                                        <td>DevOps Engineer</td>
+                                        <td>Engineering</td>
+                                        <td>david.wilson@company.com</td>
+                                        <td>+1 (555) 567-8901</td>
+                                        <td>2018-09-12</td>
+                                        <td>$90,000</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>006</td>
+                                        <td>Lisa Brown</td>
+                                        <td>HR Coordinator</td>
+                                        <td>Human Resources</td>
+                                        <td>lisa.brown@company.com</td>
+                                        <td>+1 (555) 678-9012</td>
+                                        <td>2021-06-20</td>
+                                        <td>$55,000</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>007</td>
+                                        <td>Robert Taylor</td>
+                                        <td>Sales Director</td>
+                                        <td>Sales</td>
+                                        <td>robert.taylor@company.com</td>
+                                        <td>+1 (555) 789-0123</td>
+                                        <td>2017-04-08</td>
+                                        <td>$120,000</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>008</td>
+                                        <td>Amanda Garcia</td>
+                                        <td>Data Analyst</td>
+                                        <td>Analytics</td>
+                                        <td>amanda.garcia@company.com</td>
+                                        <td>+1 (555) 890-1234</td>
+                                        <td>2022-02-14</td>
+                                        <td>$70,000</td>
+                                        <td><span class="badge bg-info">Training</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary">Edit</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Content Section -->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Recent Activity</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker bg-primary"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="timeline-title">New user registration</h6>
+                                            <p class="timeline-text">Amanda Garcia completed onboarding process</p>
+                                            <small class="text-muted">2 hours ago</small>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker bg-success"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="timeline-title">Project milestone reached</h6>
+                                            <p class="timeline-text">Q4 product launch completed successfully</p>
+                                            <small class="text-muted">1 day ago</small>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker bg-warning"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="timeline-title">System maintenance</h6>
+                                            <p class="timeline-text">Scheduled database optimization completed</p>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Quick Actions</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary btn-lg" type="button">Add New Employee</button>
+                                    <button class="btn btn-outline-secondary" type="button">Generate Report</button>
+                                    <button class="btn btn-outline-secondary" type="button">Send Newsletter</button>
+                                    <button class="btn btn-outline-secondary" type="button">Backup Data</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="row bg-dark text-white py-3 mt-5">
+            <div class="col-12 text-center">
+                <p class="mb-0">&copy; 2024 Company Dashboard. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        $(document).ready(function() {
+    
+    // Initialize tooltips and popovers
+    $('[data-bs-toggle="tooltip"]').tooltip();
+    $('[data-bs-toggle="popover"]').popover();
+    
+    // Table row selection functionality
+    $('#employeeTable tbody tr').click(function() {
+        $(this).toggleClass('table-active');
+    });
+    
+    // Search functionality for the table
+    function filterTable() {
+        var searchTerm = $('#searchInput').val().toLowerCase();
+        $('#employeeTable tbody tr').each(function() {
+            var text = $(this).text().toLowerCase();
+            if (text.indexOf(searchTerm) > -1) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+    
+    // Add search input to the table header
+    if ($('#employeeTable').length) {
+        var searchHtml = `
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="searchInput" placeholder="Search employees...">
+                <button class="btn btn-outline-secondary" type="button" id="clearSearch">Clear</button>
+            </div>
+        `;
+        $('#employeeTable').before(searchHtml);
+        
+        // Bind search events
+        $('#searchInput').on('keyup', filterTable);
+        $('#clearSearch').click(function() {
+            $('#searchInput').val('');
+            filterTable();
+        });
+    }
+    
+    // Sort table functionality
+    $('#employeeTable th').click(function() {
+        var table = $(this).parents('table').eq(0);
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
+        this.asc = !this.asc;
+        if (!this.asc) {
+            rows = rows.reverse();
+        }
+        for (var i = 0; i < rows.length; i++) {
+            table.append(rows[i]);
+        }
+        
+        // Update sort indicators
+        table.find('th').removeClass('sort-asc sort-desc');
+        $(this).addClass(this.asc ? 'sort-asc' : 'sort-desc');
+    });
+    
+    function comparer(index) {
+        return function(a, b) {
+            var valA = getCellValue(a, index);
+            var valB = getCellValue(b, index);
+            return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB);
+        };
+    }
+    
+    function getCellValue(row, index) {
+        return $(row).children('td').eq(index).text();
+    }
+    
+    // Add sort indicators to table headers
+    $('#employeeTable th').each(function() {
+        $(this).append(' <i class="bi bi-arrow-down-up text-muted"></i>');
+        $(this).css('cursor', 'pointer');
+    });
+    
+    // Dashboard card animations
+    $('.card').hover(
+        function() {
+            $(this).find('.card-body').animate({
+                paddingTop: '2.5rem',
+                paddingBottom: '2.5rem'
+            }, 200);
+        },
+        function() {
+            $(this).find('.card-body').animate({
+                paddingTop: '2rem',
+                paddingBottom: '2rem'
+            }, 200);
+        }
+    );
+    
+    // Sidebar navigation highlighting
+    $('.sidebar .nav-link').click(function(e) {
+        e.preventDefault();
+        $('.sidebar .nav-link').removeClass('active');
+        $(this).addClass('active');
+        
+        // Simulate page navigation
+        var section = $(this).attr('href').substring(1);
+        showSection(section);
+    });
+    
+    function showSection(section) {
+        // Hide all content sections
+        $('main > div').hide();
+        
+        // Show selected section (in a real app, this would load different content)
+        switch(section) {
+            case 'dashboard':
+                $('main > div').show();
+                break;
+            case 'users':
+                $('#employeeTable').closest('.card').show();
+                $('main > div').not($('#employeeTable').closest('.card')).hide();
+                break;
+            case 'reports':
+                // Show reports section (placeholder)
+                $('main').append('<div class="alert alert-info">Reports section - Coming soon!</div>');
+                break;
+            case 'settings':
+                // Show settings section (placeholder)
+                $('main').append('<div class="alert alert-info">Settings section - Coming soon!</div>');
+                break;
+        }
+    }
+    
+    // Quick action buttons functionality
+    $('.btn').click(function() {
+        var buttonText = $(this).text();
+        
+        switch(buttonText) {
+            case 'Add New Employee':
+                showAddEmployeeModal();
+                break;
+            case 'Generate Report':
+                generateReport();
+                break;
+            case 'Send Newsletter':
+                sendNewsletter();
+                break;
+            case 'Backup Data':
+                backupData();
+                break;
+        }
+    });
+    
+    function showAddEmployeeModal() {
+        var modalHtml = `
+            <div class="modal fade" id="addEmployeeModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add New Employee</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="addEmployeeForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">First Name</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Position</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Department</label>
+                                            <select class="form-select" required>
+                                                <option value="">Select Department</option>
+                                                <option value="Engineering">Engineering</option>
+                                                <option value="Marketing">Marketing</option>
+                                                <option value="Sales">Sales</option>
+                                                <option value="HR">Human Resources</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" required>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" form="addEmployeeForm" class="btn btn-primary">Add Employee</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        $('body').append(modalHtml);
+        var modal = new bootstrap.Modal(document.getElementById('addEmployeeModal'));
+        modal.show();
+        
+        // Clean up modal after it's hidden
+        $('#addEmployeeModal').on('hidden.bs.modal', function() {
+            $(this).remove();
+        });
+    }
+    
+    function generateReport() {
+        // Simulate report generation
+        var loadingHtml = '<div class="alert alert-info">Generating report... Please wait.</div>';
+        $('main').prepend(loadingHtml);
+        
+        setTimeout(function() {
+            $('.alert').remove();
+            $('main').prepend('<div class="alert alert-success">Report generated successfully! <a href="#" class="alert-link">Download PDF</a></div>');
+        }, 2000);
+    }
+    
+    function sendNewsletter() {
+        // Simulate newsletter sending
+        $('main').prepend('<div class="alert alert-warning">Newsletter sent to 2,847 subscribers!</div>');
+    }
+    
+    function backupData() {
+        // Simulate data backup
+        $('main').prepend('<div class="alert alert-info">Data backup initiated. Estimated completion: 5 minutes.</div>');
+    }
+    
+    // Table row actions
+    $(document).on('click', '.btn-edit', function() {
+        var row = $(this).closest('tr');
+        var name = row.find('td:eq(1)').text();
+        alert('Edit employee: ' + name);
+    });
+    
+    $(document).on('click', '.btn-delete', function() {
+        var row = $(this).closest('tr');
+        var name = row.find('td:eq(1)').text();
+        
+        if (confirm('Are you sure you want to delete ' + name + '?')) {
+            row.fadeOut(400, function() {
+                $(this).remove();
+            });
+        }
+    });
+    
+    // Auto-refresh dashboard data (simulated)
+    setInterval(function() {
+        // Update random metrics
+        var randomUsers = Math.floor(Math.random() * 100) + 2800;
+        var randomRevenue = Math.floor(Math.random() * 5000) + 45000;
+        
+        $('.card:contains("Total Users") .h5').text(randomUsers.toLocaleString());
+        $('.card:contains("Revenue") .h5').text('$' + randomRevenue.toLocaleString());
+    }, 30000); // Update every 30 seconds
+    
+    // Initialize dashboard
+    console.log('Desktop Dashboard initialized successfully!');
+    
+    // Add some visual feedback for interactions
+    $('body').on('click', function() {
+        // Add subtle ripple effect
+        var ripple = $('<div class="ripple"></div>');
+        $('body').append(ripple);
+        
+        setTimeout(function() {
+            ripple.remove();
+        }, 600);
+    });
+    
+    // Keyboard shortcuts for power users
+    $(document).keydown(function(e) {
+        if (e.ctrlKey || e.metaKey) {
+            switch(e.key) {
+                case 'f':
+                    e.preventDefault();
+                    $('#searchInput').focus();
+                    break;
+                case 'n':
+                    e.preventDefault();
+                    showAddEmployeeModal();
+                    break;
+                case 'r':
+                    e.preventDefault();
+                    generateReport();
+                    break;
+            }
+        }
+    });
+    
+    // Show keyboard shortcuts help
+    $('body').append(`
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div class="toast" role="alert" id="shortcutsToast">
+                <div class="toast-header">
+                    <strong class="me-auto">Keyboard Shortcuts</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">
+                    <kbd>Ctrl+F</kbd> - Search<br>
+                    <kbd>Ctrl+N</kbd> - New Employee<br>
+                    <kbd>Ctrl+R</kbd> - Generate Report
+                </div>
+            </div>
+        </div>
+    `);
+    
+    // Show shortcuts on first visit
+    if (!localStorage.getItem('shortcutsShown')) {
+        setTimeout(function() {
+            var toast = new bootstrap.Toast(document.getElementById('shortcutsToast'));
+            toast.show();
+            localStorage.setItem('shortcutsShown', 'true');
+        }, 3000);
+    }
+});
+
+    </script>
+</body>
+</html>

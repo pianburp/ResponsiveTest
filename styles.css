@@ -1,0 +1,460 @@
+/* Desktop-First Design Styles */
+/* This design is optimized for desktop and will need mobile responsiveness improvements */
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fc;
+    color: #5a5c69;
+}
+
+/* Container improvements for better desktop layout */
+.container-fluid {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Row spacing improvements */
+.row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+
+/* Sidebar Styles - Desktop Optimized */
+.sidebar {
+    min-height: 100vh;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    background: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+    border-radius: 0 1rem 1rem 0;
+    margin-right: 1rem;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    border-radius: 0.35rem;
+    margin: 0.2rem 0.5rem;
+    transition: all 0.3s ease;
+}
+/* Card Styles - Desktop Optimized */
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+/* Dashboard cards specific styling for better desktop alignment */
+.card.border-left-primary,
+.card.border-left-success,
+.card.border-left-info,
+.card.border-left-warning {
+    margin-bottom: 1rem;
+    height: 100%;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom: none;
+    border-radius: 0.75rem 0.75rem 0 0 !important;
+}
+
+/* Dashboard Cards - Desktop Layout */
+.border-left-primary {
+    border-left: 0.25rem solid #4e73df !important;
+}
+
+.border-left-success {
+    border-left: 0.25rem solid #1cc88a !important;
+}
+
+.border-left-info {
+    border-left: 0.25rem solid #36b9cc !important;
+}
+
+.border-left-warning {
+    border-left: 0.25rem solid #f6c23e !important;
+}
+
+/* Table Styles - Desktop Optimized */
+.table {
+    font-size: 0.9rem;
+}
+
+.table th {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1rem 0.75rem;
+    border: none;
+}
+
+.table td {
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+    border-color: #e3e6f0;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fc;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+/* Button Styles - Desktop Optimized */
+.btn {
+    border-radius: 0.5rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Timeline Styles - Desktop Layout */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -1rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #e3e6f0;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.timeline-title {
+    margin-bottom: 0.5rem;
+    color: #5a5c69;
+    font-weight: 600;
+}
+
+.timeline-text {
+    margin-bottom: 0.5rem;
+    color: #858796;
+}
+
+/* Header Styles - Desktop Optimized */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.display-4 {
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+    box-shadow: 0 -0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+/* Utility Classes */
+.text-xs {
+    font-size: 0.7rem;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.text-gray-800 {
+    color: #5a5c69 !important;
+}
+
+.text-gray-300 {
+    color: #dddfeb !important;
+}
+
+/* Dropdown Styles - Desktop Optimized */
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.15);
+    border-radius: 0.5rem;
+}
+
+.dropdown-item {
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fc;
+    transform: translateX(5px);
+}
+
+/* Responsive Breakpoints - Desktop First */
+/* These will need to be optimized for mobile */
+
+/* Large screens and up */
+@media (min-width: 1200px) {
+    .container-fluid {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .sidebar {
+        width: 250px;
+        margin-right: 1.5rem;
+    }
+    
+    main {
+        margin-left: 0;
+        padding-left: 2rem;
+    }
+    
+    /* Better spacing for dashboard cards on large screens */
+    .col-xl-3 {
+        padding: 0 1rem;
+    }
+}
+
+/* Mobile and small screens - Remove max-width for more messiness */
+@media (max-width: 1199px) {
+    .container-fluid {
+        max-width: none;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Force table to be full width and messy on mobile */
+    .table-responsive {
+        overflow-x: visible !important;
+        max-width: none !important;
+    }
+    
+    /* Remove any table constraints on mobile */
+    #employeeTable {
+        width: 100% !important;
+        min-width: 800px !important; /* Force wide table on mobile */
+        table-layout: fixed;
+    }
+    
+    /* Make table cells more cramped on mobile */
+    #employeeTable td,
+    #employeeTable th {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    
+    /* Force horizontal scrolling on mobile */
+    .card-body {
+        overflow-x: auto;
+        padding: 1rem;
+    }
+    
+    /* Remove max-width constraints for dashboard cards on mobile */
+    .card {
+        max-width: none !important;
+        width: 100% !important;
+    }
+    
+    /* Force dashboard cards to be full width and messy */
+    .col-md-6, .col-xl-3 {
+        max-width: none !important;
+        flex: none !important;
+        width: 100% !important;
+    }
+    
+    /* Make dashboard cards stretch beyond container */
+    .row.mb-4 {
+        margin-left: -2rem !important;
+        margin-right: -2rem !important;
+        width: calc(100% + 4rem) !important;
+    }
+}
+
+/* Medium screens and up */
+@media (min-width: 768px) {
+    .table-responsive {
+        overflow-x: visible;
+    }
+    
+    .card-body {
+        padding: 2rem;
+    }
+    
+    /* Better sidebar integration on medium screens */
+    .sidebar {
+        margin-right: 0.75rem;
+    }
+    
+    main {
+        padding-left: 1.5rem;
+    }
+}
+
+/* Small screens and up */
+@media (min-width: 576px) {
+    .btn-group {
+        display: flex;
+        gap: 0.5rem;
+    }
+}
+
+/* Mobile-first optimizations will need to be added here */
+/* The current design is NOT mobile-friendly and will break on small screens */
+
+/* Additional mobile messiness - make it harder to fix */
+@media (max-width: 767px) {
+    /* Force sidebar to be visible but broken on mobile */
+    .sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        z-index: 1000;
+        background: rgba(78, 115, 223, 0.95) !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        padding: 1rem !important;
+    }
+    
+    /* Make sidebar navigation horizontal and cramped */
+    .sidebar .nav {
+        flex-direction: row !important;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .sidebar .nav-item {
+        margin: 0.25rem;
+    }
+    
+    .sidebar .nav-link {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    
+    /* Force main content to be under the broken sidebar */
+    main {
+        margin-top: 80px !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    /* Make dashboard cards even more cramped and broken */
+    .col-md-6, .col-xl-3 {
+        padding: 0.25rem !important;
+        max-width: none !important;
+        flex: none !important;
+        width: 100% !important;
+    }
+    
+    /* Force cards to break layout on mobile */
+    .card {
+        max-width: none !important;
+        width: 100% !important;
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        border-radius: 0 !important;
+    }
+    
+    /* Make card content overflow on mobile */
+    .card-body {
+        padding: 0.5rem !important;
+        overflow: visible !important;
+    }
+    
+    /* Break the dashboard metrics layout completely */
+    .row.mb-4 {
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        width: calc(100% + 2rem) !important;
+        display: block !important;
+    }
+    
+    .row.mb-4 > div {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* Force table to be completely broken on mobile */
+    #employeeTable {
+        min-width: 900px !important;
+        font-size: 0.7rem !important;
+    }
+    
+    #employeeTable td,
+    #employeeTable th {
+        padding: 0.25rem 0.1rem !important;
+        font-size: 0.7rem !important;
+    }
+    
+    /* Make buttons too small for mobile */
+    .btn-sm {
+        padding: 0.1rem 0.2rem !important;
+        font-size: 0.6rem !important;
+    }
+    
+    /* Break the timeline layout on mobile */
+    .timeline {
+        padding-left: 0 !important;
+    }
+    
+    .timeline-item {
+        padding-left: 0 !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .timeline-marker {
+        display: none !important;
+    }
+    
+    /* Make header text too large for mobile */
+    .display-4 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .lead {
+        font-size: 1rem !important;
+    }
+}
