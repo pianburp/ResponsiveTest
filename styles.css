@@ -1,87 +1,131 @@
-/* Desktop-First Design Styles */
-/* This design is optimized for desktop and will need mobile responsiveness improvements */
+/* Mobile-First Design Styles */
+/* This design is optimized for all screen sizes */
 
 /* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fc;
     color: #5a5c69;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Container improvements for better desktop layout */
+/* Container improvements for better mobile-first layout */
 .container-fluid {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Row spacing improvements */
 .row {
-    margin-left: -0.75rem;
-    margin-right: -0.75rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
 }
 
-/* Sidebar Styles - Desktop Optimized */
+/* Sidebar Styles - Mobile First */
 .sidebar {
-    min-height: 100vh;
-    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
     background: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
-    border-radius: 0 1rem 1rem 0;
-    margin-right: 1rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    padding: 0.75rem;
+    border-radius: 0;
+    z-index: 1000;
 }
 
 .sidebar .nav-link {
     color: rgba(255, 255, 255, 0.8);
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1rem;
     font-weight: 500;
     border-radius: 0.35rem;
-    margin: 0.2rem 0.5rem;
+    margin: 0.2rem;
     transition: all 0.3s ease;
-}
-/* Card Styles - Desktop Optimized */
-.card {
-    border: none;
-    border-radius: 0.75rem;
-    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
-    transition: all 0.3s ease;
-    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
 }
 
-/* Dashboard cards specific styling for better desktop alignment */
+/* Mobile sidebar navigation */
+@media (max-width: 767px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .sidebar .nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .sidebar .nav-item {
+        margin: 0.25rem;
+    }
+    
+    .sidebar .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        white-space: normal;
+        text-align: center;
+    }
+}
+/* Card Styles - Mobile First */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Dashboard cards specific styling for better mobile layout */
 .card.border-left-primary,
 .card.border-left-success,
 .card.border-left-info,
 .card.border-left-warning {
     margin-bottom: 1rem;
-    height: 100%;
+    height: auto;
+    border-left-width: 0.25rem;
+    border-style: solid;
 }
 
 .card-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border-bottom: none;
-    border-radius: 0.75rem 0.75rem 0 0 !important;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+    padding: 0.75rem 1rem;
 }
 
-/* Dashboard Cards - Desktop Layout */
+.card-body {
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+/* Dashboard Cards - Color Styles */
 .border-left-primary {
-    border-left: 0.25rem solid #4e73df !important;
+    border-left-color: #4e73df !important;
 }
 
 .border-left-success {
-    border-left: 0.25rem solid #1cc88a !important;
+    border-left-color: #1cc88a !important;
 }
 
 .border-left-info {
-    border-left: 0.25rem solid #36b9cc !important;
+    border-left-color: #36b9cc !important;
 }
 
 .border-left-warning {
-    border-left: 0.25rem solid #f6c23e !important;
+    border-left-color: #f6c23e !important;
 }
 
-/* Table Styles - Desktop Optimized */
+/* Table Styles - Mobile First */
 .table {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    width: 100%;
 }
 
 .table th {
@@ -90,28 +134,77 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 1rem 0.75rem;
+    padding: 0.75rem 0.5rem;
     border: none;
 }
 
 .table td {
-    padding: 1rem 0.75rem;
+    padding: 0.75rem 0.5rem;
     vertical-align: middle;
     border-color: #e3e6f0;
 }
 
 .table tbody tr:hover {
     background-color: #f8f9fc;
-    transform: scale(1.01);
     transition: all 0.2s ease;
 }
 
-/* Button Styles - Desktop Optimized */
+/* Mobile table improvements */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#employeeTable {
+    width: 100%;
+    min-width: auto;
+    table-layout: auto;
+}
+
+/* Responsive table for mobile */
+@media (max-width: 767px) {
+    .table-responsive {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .table th, 
+    .table td {
+        padding: 0.5rem 0.3rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Button group in tables */
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    /* Alternative: Make table scroll horizontally in a controlled way */
+    #employeeTable {
+        width: 100%;
+        min-width: 0;
+    }
+    
+    /* Mobile-friendly table action buttons */
+    .btn-sm {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Button Styles - Mobile First */
 .btn {
     border-radius: 0.5rem;
     font-weight: 500;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    display: inline-block;
+    min-height: 38px; /* Minimum touch target size */
+    min-width: 44px; /* Minimum touch target size */
 }
 
 .btn:hover {
@@ -120,31 +213,47 @@ body {
 }
 
 .btn-sm {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.8rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.85rem;
+    min-height: 34px; /* Minimum touch target size */
 }
 
-/* Timeline Styles - Desktop Layout */
+/* Button group */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+@media (min-width: 768px) {
+    .btn-group {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Timeline Styles - Mobile First */
 .timeline {
     position: relative;
-    padding-left: 2rem;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 2rem;
-    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 .timeline-marker {
     position: absolute;
-    left: -1rem;
-    top: 0.5rem;
+    left: -0.5rem;
+    top: 0.25rem;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
     border: 3px solid #fff;
     box-shadow: 0 0 0 3px #e3e6f0;
+    z-index: 5;
 }
 
 .timeline-content {
@@ -158,39 +267,76 @@ body {
     margin-bottom: 0.5rem;
     color: #5a5c69;
     font-weight: 600;
+    font-size: 1rem;
 }
 
 .timeline-text {
     margin-bottom: 0.5rem;
     color: #858796;
+    font-size: 0.9rem;
 }
 
-/* Header Styles - Desktop Optimized */
+@media (min-width: 768px) {
+    .timeline {
+        padding-left: 2rem;
+    }
+    
+    .timeline-item {
+        margin-bottom: 2rem;
+        padding-left: 2rem;
+    }
+    
+    .timeline-marker {
+        left: -1rem;
+        top: 0.5rem;
+    }
+}
+
+/* Header Styles - Mobile First */
 header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    padding: 1.5rem 0;
 }
 
 .display-4 {
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.75rem;
 }
 
 .lead {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 400;
     opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .lead {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .display-4 {
+        font-size: 3.5rem;
+    }
 }
 
 /* Footer Styles */
 footer {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
     box-shadow: 0 -0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    padding: 1rem 0;
 }
 
 /* Utility Classes */
 .text-xs {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
 }
 
 .font-weight-bold {
@@ -205,7 +351,7 @@ footer {
     color: #dddfeb !important;
 }
 
-/* Dropdown Styles - Desktop Optimized */
+/* Dropdown Styles - Mobile First */
 .dropdown-toggle::after {
     display: none;
 }
@@ -214,26 +360,152 @@ footer {
     border: none;
     box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.15);
     border-radius: 0.5rem;
+    min-width: 200px;
+    z-index: 1050;
 }
 
 .dropdown-item {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1rem;
     transition: all 0.2s ease;
+    font-size: 0.9rem;
+    /* Minimum touch target height */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
 .dropdown-item:hover {
     background-color: #f8f9fc;
-    transform: translateX(5px);
+    transform: translateX(3px);
 }
 
-/* Responsive Breakpoints - Desktop First */
-/* These will need to be optimized for mobile */
+@media (min-width: 768px) {
+    .dropdown-item {
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .dropdown-item:hover {
+        transform: translateX(5px);
+    }
+}
 
-/* Large screens and up */
+/* Responsive Breakpoints - Mobile First */
+
+/* Base styles are mobile first */
+main {
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Small screens and up (576px+) */
+@media (min-width: 576px) {
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    main {
+        padding: 0.75rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .btn-group {
+        gap: 0.5rem;
+    }
+}
+
+/* Medium screens and up (768px+) */
+@media (min-width: 768px) {
+    .container-fluid {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    main {
+        padding: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .table-responsive {
+        overflow-x: visible;
+    }
+    
+    .sidebar {
+        border-radius: 0 0.5rem 0.5rem 0;
+        margin-right: 0.75rem;
+    }
+    
+    .sidebar .nav {
+        flex-direction: column;
+    }
+    
+    .sidebar .nav-link {
+        padding: 0.75rem 1.25rem;
+        text-align: left;
+    }
+    
+    /* Better sidebar integration on medium screens */
+    main {
+        padding-left: 1.5rem;
+    }
+    
+    /* Restore table cells to normal size */
+    .table td,
+    .table th {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Large screens and up (992px+) */
+@media (min-width: 992px) {
+    .container-fluid {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+    }
+    
+    main {
+        padding: 1.5rem;
+    }
+    
+    .card-body {
+        padding: 1.75rem;
+    }
+    
+    .sidebar {
+        min-height: 100vh;
+        margin-right: 1rem;
+    }
+    
+    .sidebar .nav-link {
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Restore table sizes */
+    .table {
+        font-size: 0.9rem;
+    }
+    
+    .table td,
+    .table th {
+        padding: 1rem 0.75rem;
+    }
+}
+
+/* Extra large screens and up (1200px+) */
 @media (min-width: 1200px) {
     .container-fluid {
         max-width: 1400px;
         margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
     
     .sidebar {
@@ -244,217 +516,20 @@ footer {
     main {
         margin-left: 0;
         padding-left: 2rem;
+        padding-right: 2rem;
     }
     
     /* Better spacing for dashboard cards on large screens */
     .col-xl-3 {
         padding: 0 1rem;
     }
-}
-
-/* Mobile and small screens - Remove max-width for more messiness */
-@media (max-width: 1199px) {
-    .container-fluid {
-        max-width: none;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    
-    /* Force table to be full width and messy on mobile */
-    .table-responsive {
-        overflow-x: visible !important;
-        max-width: none !important;
-    }
-    
-    /* Remove any table constraints on mobile */
-    #employeeTable {
-        width: 100% !important;
-        min-width: 800px !important; /* Force wide table on mobile */
-        table-layout: fixed;
-    }
-    
-    /* Make table cells more cramped on mobile */
-    #employeeTable td,
-    #employeeTable th {
-        padding: 0.5rem 0.25rem;
-        font-size: 0.8rem;
-        white-space: nowrap;
-    }
-    
-    /* Force horizontal scrolling on mobile */
-    .card-body {
-        overflow-x: auto;
-        padding: 1rem;
-    }
-    
-    /* Remove max-width constraints for dashboard cards on mobile */
-    .card {
-        max-width: none !important;
-        width: 100% !important;
-    }
-    
-    /* Force dashboard cards to be full width and messy */
-    .col-md-6, .col-xl-3 {
-        max-width: none !important;
-        flex: none !important;
-        width: 100% !important;
-    }
-    
-    /* Make dashboard cards stretch beyond container */
-    .row.mb-4 {
-        margin-left: -2rem !important;
-        margin-right: -2rem !important;
-        width: calc(100% + 4rem) !important;
-    }
-}
-
-/* Medium screens and up */
-@media (min-width: 768px) {
-    .table-responsive {
-        overflow-x: visible;
-    }
     
     .card-body {
         padding: 2rem;
     }
     
-    /* Better sidebar integration on medium screens */
-    .sidebar {
-        margin-right: 0.75rem;
-    }
-    
-    main {
-        padding-left: 1.5rem;
-    }
-}
-
-/* Small screens and up */
-@media (min-width: 576px) {
-    .btn-group {
-        display: flex;
-        gap: 0.5rem;
-    }
-}
-
-/* Mobile-first optimizations will need to be added here */
-/* The current design is NOT mobile-friendly and will break on small screens */
-
-/* Additional mobile messiness - make it harder to fix */
-@media (max-width: 767px) {
-    /* Force sidebar to be visible but broken on mobile */
-    .sidebar {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: auto !important;
-        z-index: 1000;
-        background: rgba(78, 115, 223, 0.95) !important;
-        border-radius: 0 !important;
-        margin: 0 !important;
-        padding: 1rem !important;
-    }
-    
-    /* Make sidebar navigation horizontal and cramped */
-    .sidebar .nav {
-        flex-direction: row !important;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    
-    .sidebar .nav-item {
-        margin: 0.25rem;
-    }
-    
-    .sidebar .nav-link {
-        padding: 0.5rem 0.75rem !important;
-        font-size: 0.8rem;
-        white-space: nowrap;
-    }
-    
-    /* Force main content to be under the broken sidebar */
-    main {
-        margin-top: 80px !important;
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-    }
-    
-    /* Make dashboard cards even more cramped and broken */
-    .col-md-6, .col-xl-3 {
-        padding: 0.25rem !important;
-        max-width: none !important;
-        flex: none !important;
-        width: 100% !important;
-    }
-    
-    /* Force cards to break layout on mobile */
-    .card {
-        max-width: none !important;
-        width: 100% !important;
-        margin-left: -1rem !important;
-        margin-right: -1rem !important;
-        border-radius: 0 !important;
-    }
-    
-    /* Make card content overflow on mobile */
-    .card-body {
-        padding: 0.5rem !important;
-        overflow: visible !important;
-    }
-    
-    /* Break the dashboard metrics layout completely */
-    .row.mb-4 {
-        margin-left: -1rem !important;
-        margin-right: -1rem !important;
-        width: calc(100% + 2rem) !important;
-        display: block !important;
-    }
-    
-    .row.mb-4 > div {
-        display: block !important;
-        width: 100% !important;
-        margin-bottom: 0.5rem !important;
-    }
-    
-    /* Force table to be completely broken on mobile */
-    #employeeTable {
-        min-width: 900px !important;
-        font-size: 0.7rem !important;
-    }
-    
-    #employeeTable td,
-    #employeeTable th {
-        padding: 0.25rem 0.1rem !important;
-        font-size: 0.7rem !important;
-    }
-    
-    /* Make buttons too small for mobile */
-    .btn-sm {
-        padding: 0.1rem 0.2rem !important;
-        font-size: 0.6rem !important;
-    }
-    
-    /* Break the timeline layout on mobile */
-    .timeline {
-        padding-left: 0 !important;
-    }
-    
-    .timeline-item {
-        padding-left: 0 !important;
-        margin-bottom: 0.5rem !important;
-    }
-    
-    .timeline-marker {
-        display: none !important;
-    }
-    
-    /* Make header text too large for mobile */
-    .display-4 {
-        font-size: 2rem !important;
-        line-height: 1.2 !important;
-    }
-    
-    .lead {
-        font-size: 1rem !important;
+    /* Hover effects only on large screens with mouse */
+    .table tbody tr:hover {
+        transform: scale(1.01);
     }
 }
